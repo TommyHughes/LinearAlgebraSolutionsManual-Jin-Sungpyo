@@ -1,0 +1,32 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs, mathtools, amssymb, enumitem, amsmath, amsthm}
+
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
+
+\newcommand{\myVar}{}
+
+\renewcommand{\thesubsection}{\myVar.\thechapter.\arabic{subsection}}
+
+\newenvironment{problem}
+{\noindent \renewcommand{\myVar}{P} \subsection{}}
+{}
+
+\newenvironment{exercise}
+{\noindent \renewcommand{\myVar}{E} \subsection{}}
+{}
+
+\usepackage[pdfencoding=auto, psdextra]{hyperref}
+\title{Linear Algebra Solutions - Jin Ho Kwak and Sungpyo Hong - 2nd Edition}
+\author{Tommy Hughes}
+\date{July 2017}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\input{Chapter1/main1.tex}
+\input{Chapter2/main2.tex}
+
+\end{document}

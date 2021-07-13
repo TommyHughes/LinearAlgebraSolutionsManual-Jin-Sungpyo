@@ -1,0 +1,324 @@
+\section{Exercises}
+
+\begin{exercise} \label{E.1.1}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.2}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.3}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.4}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.5}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.6}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.7}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.8}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.9}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.10}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.11}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.12}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.13}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.14}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.15}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.16}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.17}
+    Find all possible choices of \( a, b \) and \( c \) so that \( A = \begin{bmatrix} a & b \\ c & 0 \end{bmatrix} \) has an inverse matrix such that \( A^{-1} = A \).
+    
+    \begin{proof}
+        So we have
+        \[ A^2 = \begin{bmatrix} a & b \\ c & 0 \end{bmatrix} \begin{bmatrix} a & b \\ c & 0 \end{bmatrix} = \begin{bmatrix} a^2 + bc & ab \\ ca & cb \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I \]
+    \end{proof}
+    which yields
+    \[ 
+    \begin{cases}
+        a^2 + bc &= 1 \\
+        ab &= 0 \\
+        ca &= 0 \\
+        cb &= 1
+    \end{cases}
+    \]
+    If \( a \neq 0 \) then \( b = c = 0 \) which contradicts with \( cb = 1 \). Therefore \( a \neq 0 \). So \( c,b \neq 0 \) and \( c = \frac{1}{b} \). That is
+    \[ A = \begin{bmatrix} 0 & b \\ \frac{1}{b} & 0 \end{bmatrix} \]
+\end{exercise}
+
+\begin{exercise} \label{E.1.18}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.19}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.20}
+    Suppose \( A \) is a \( 2 \times 1 \) matrix and \( B \) is a \( 1 \times 2 \) matrix. Prove that their product \( AB \) is not invertible.
+    
+    \begin{proof}
+        Let us denote
+        \begin{align*}
+            A &= \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} \\
+            B &= \begin{bmatrix} b_1 & b_2 \end{bmatrix}
+        \end{align*}
+        Then
+        \begin{align*}
+            AB &= \begin{bmatrix} a_1b_1 & a_1b_2 \\ a_2b_1 & a_2b_2 \end{bmatrix}
+        \end{align*}
+        So \( AB \) is invertible if and only if
+        \[ \frac{1}{a_1b_1a_2b_2-a_2b_1a_1b_2}\begin{bmatrix} a_2b_2 & -a_1b_2 \\ -a_2b_2 & a_1b_1 \end{bmatrix} \]
+        exists. But \( a_1b_1a_2b_2-a_2b_1a_1b_2 = 0\), so the above does not exist. Therefore, \( AB \) is not invertible. 
+    \end{proof}
+\end{exercise}
+
+\begin{exercise} \label{E.1.21}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.22}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.23}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.24}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.25}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.26}
+    pending
+\end{exercise}
+
+\begin{exercise} \label{E.1.27}
+    A square matrix is said to be nilpotent if \( A^k = 0 \) for a positive integer \( k \). 
+    \begin{enumerate}
+        \item Show that any invertible matrix is not nilpotent.
+        
+        \item Show that any triangular matrix with zero diagonal is nilpotent.
+        
+        \item Show that if \( A \) is nilpotent with \( A^k = 0 \), then \( I-A \) is invertible with its inverse \( I + A + \ldots + A^{k-1} \). 
+    \end{enumerate}
+    
+    \emph{Lemma.}
+    If \( L \in \mathcal{M}_n\) is a lower triangular matrix with zero diagonal and let \( b_k \) be the first non-zero entry of the \( n \times 1 \) column vector \( \mathbf{b} \). Then if \( [L\mathbf{b}]_j \) is the first non-zero entry of \( L\mathbf{b} \), then \( j > k \). 
+    
+    \noindent \emph{Proof of Lemma.} If \( i \leq k \) then
+    \begin{align*}
+        [Lb]_i &= \sum_{r=1}^n [L]_{ir}b_r \\
+        &= \sum_{r=1}^{k-1}[L]_{ir}\cdot 0 + 0 \cdot b_k + \sum_{r=k+1}^n 0 \cdot b_r \\
+        &= 0
+    \end{align*}
+    which implies the result.\( \square \)
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item Suppose \( A \) is invertible and nilpotent.
+            \begin{align*}
+                A^{k-1}A &= 0 \\
+                A &= 0
+            \end{align*}
+            contradicting with \( A^{-1} \) exists.
+            
+            \item Let \( L \in \mathcal{M}_n \) be a lower triangular matrix with zero diagonal. Since
+            \[
+            \left[ L^{n+1} \right]_{\cdot, j} = L^{n}\left[ L \right]_{\cdot, j}
+            \]
+            it follows from our lemma that the first non-zero entry of \( \left[ L^{n+1} \right]_{\cdot, j} \) would have to be in the \( (n+1) \)th row, which in turn implies that \( \left[ L^{n+1} \right]_{\cdot, j} \) is the \( n \times 1 \) zero vector for all \( 1 \leq j \leq n \). Therefore
+            \[
+            L^{n+1} = 0
+            \]
+            If \( U \) is an upper triangular matrix with zero diagonal, then \( U^T \) is a lower triangular matrix with zero diagonal and \( (U^T)^{n+1} = 0 \). Thus
+            \[
+            U^{n+1} = ((U^T)^T)^{n+1} = ((U^T)^{n+1})^T = 0^T = 0
+            \]
+            so that \( U \) is nilpotent. We should note that it can be shown that \( L^n = 0 \). Also, a much simpler proof than this can be given provided we interpret the matrix as a linear transformation.
+            
+            \item 
+            \[
+            (I-A)(I+A+\ldots+A^{k-1}) = I - A^k = I
+            \]
+        \end{enumerate}
+    \end{proof}
+\end{exercise}
+
+\begin{exercise} \label{E.1.28}
+    A square matrix is said to be idempotent if \( A^2 = A \). 
+    \begin{enumerate}
+        \item Find an example of an idempotent matrix other than \( 0 \) and \( I \).
+        
+        \item Show that if \( A \) is both idempotent and invertible, then \( A = I \).
+    \end{enumerate}
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item 
+            \[
+            \begin{bmatrix}
+            1 & 1 \\
+            0 & 0
+            \end{bmatrix}
+            \]
+            
+            \item
+            \begin{align*}
+                A^2 &= A \\
+                A^{-1}(AA) &= I \\
+                A &= I
+            \end{align*}
+        \end{enumerate}
+    \end{proof}
+\end{exercise}
+
+\begin{exercise} \label{E.1.29}
+    Determine whether the following statements are true or false, in general, and justify your answers.
+    
+    \begin{enumerate}
+        \item Let \( A \) and \( B \) be row-equivalent square matrices. Then \( A \) is invertible if and only if \( B \) is invertible.
+        
+        \item Let \( A \) be a square matrix such that \( AA = A \). Then \( A \) is the identity.
+        
+        \item If \( A \) and \( B \) are invertible matrices such that \( A^2 = I \) and \( B^2 = I \), then \( (AB)^{-1} = BA \).
+        
+        \item If \( A \) and \( B \) are invertible matrices, \( A + B \) is also invertible.
+        
+        \item If \( A \), \( B \), and \( AB \) are symmetric, then \( AB = BA \)
+        
+        \item If \( A \) and \( B \) are symmetric and of the same size, then \( AB \) is also symmetric.
+        
+        \item If \( A \) is invertible and symmetric, then \( A^{-1} \) is also symmetric
+        
+        \item Let \( AB^T = I \). Then \( A \) is invertible if and only if \( B \) is invertible.
+        
+        \item If a square matrix \( A \) is not invertible, then neither is \( AB \) for any \( B \).
+        
+        \item If \( E_1 \) and \( E_2 \) are elementary matrices, then \( E_1E_2 = E_2E_1 \)
+        
+        \item The inverse of an invertible upper triangular matrix is upper triangular.
+        
+        \item Any invertible matrix \( A \) can be written as \( A = LU \), where \( L \) is lower triangular and \( U \) is upper triangular.
+    \end{enumerate}
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item \textbf{True.} Since \( A \) is row-equivalent to \( B \), we have
+            \begin{align*}
+                (E_k \ldots E_1)A &= B \\
+                (E_k \ldots E_1)^{-1}B &= A
+            \end{align*}
+            So,
+            \[ I = A^{-1}A = (E'_m \ldots E'_1)A = (E'_m \ldots E'_1)(E_k \ldots E_1)^{-1}B = B^{-1}B = I \]
+            
+            \item \textbf{False.}
+            \[ \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}\]
+            
+            \item \textbf{True.}
+            \begin{align*}
+                (AB)BA &= A(BB)A \\
+                &= AB^2A \\
+                &= AIA \\
+                &= AA \\
+                &= A^2 \\
+                &= I
+            \end{align*}
+            
+            \item \textbf{False.} Let \( A = I \) and \( B = -I \). Then \( A^{-1} \) and \( B^{-1} \) exist and yet \( A + B = 0 \) so that \( A + B \) is not invertible.
+            
+            \item \textbf{True.}
+            \begin{align*}
+                \left[ BA \right]_{ij} &= \sum_{r=1}^n \left[ B \right]_{ir}\left[ A \right]_{rj} \\
+                &= \sum_{r=1}^n \left[ B \right]_{ri}\left[ A \right]_{jr} \\
+                &= \sum_{r=1}^n \left[ A \right]_{rj}\left[ B \right]_{ir} \\
+                &= \left[ AB \right]_{ji} \\
+                &= \left[ AB \right]_{ij}
+            \end{align*}
+            
+            \item \textbf{False.}
+            \[ \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 0 & 1 \end{bmatrix}\]
+            
+            \item \textbf{True.}
+            \[ A^{-1} = (A^T)^{-1} = (A^{-1})^T \]
+            
+            \item \textbf{True.}
+            \[ AB^T = I = BA^T \]
+            
+            \item \textbf{True.} \( AB \) is invertible iff \( I = AB(AB)^{-1} = A(B(AB)^{-1}) \) iff \( A^{-1} = B(AB)^{-1} \)
+            
+            \item \textbf{False.}
+            \[ \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 2 & 0 \end{bmatrix} \neq \begin{bmatrix} 0 & 2 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}  \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}\]
+            
+            \item \textbf{True.} An intuitive way of seeing this is to recall that \( A^{-1} = E_1 \ldots E_m \) where \( E_i \) is an elementary matrix. Since \( A \) is upper triangular, from Gaussian elimination, it is clear that each \( E_i \) must also be upper triangular, and the product of upper triangular matrices will be upper triangular. However, we will supply a more formal proof as well.
+            \begin{lemma}
+                If \( U \) is upper-triangular and invertible, and \( UB \) is upper-triangular, then \( B \) is upper-triangular.
+            \end{lemma}
+            
+            \begin{proof}[proof of lemma]
+                Let \( j_0 < n \). Then \( [UB]_{\cdot j_0} = U [B]_{\cdot j_0} \) yields
+                \[
+                \begin{cases}
+                    \sum_{r=1}^n[U]_{1r}[B]_{r j_0} &= [UB]_{1 j_0} \\
+                    \sum_{r=2}^n[U]_{2r}[B]_{r j_0} &= [UB]_{2 j_0} \\
+                    \hspace{5mm}\vdots &\vdots\\
+                    \sum_{r=j_0}^n[U]_{j_0r}[B]_{r j_0} &= [UB]_{j_0 j_0} \\
+                    \sum_{r=j_0 + 1}^n[U]_{j_0+1 r}[B]_{r j_0} &= 0 \\
+                    \hspace{5mm}\vdots &\vdots\\
+                    [U]_{n-1 n-1}[B]_{n-1 j_0} + [B]_{n-1 n}[B]_{n j_0} &= 0 \\
+                    [U]_{n n}[B]_{n j_0} &= 0
+                \end{cases}
+                \]
+                Since \( U \) is invertible \( [U]_{ii} \neq 0 \) for all \( i \). Thus, the system above implies \( [B]_{n j_0} = [B]_{n-1 j_0} = \ldots = [B]_{j_0 + 1 j_0} = 0 \) so that \( B \) is upper-triangular.
+            \end{proof}
+            
+            \begin{proof}[proof of exercise]
+                If \( U \) is upper-triangular and invertible, then \( I = UU^{-1} \) is upper-triangular. Therefore, by our lemma, \( U^{-1} \) is upper-triangular.
+            \end{proof}
+            
+            \item \textbf{True.} Think of describing Gauss-Jordan elimination using multiplication of elementary matrices instead of row-operations.
+        \end{enumerate}
+    \end{proof}
+\end{exercise}

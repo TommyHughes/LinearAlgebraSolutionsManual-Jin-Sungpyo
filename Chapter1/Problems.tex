@@ -1,0 +1,464 @@
+\section{Problems}
+
+\begin{problem} \label{P.1.1}
+     For a system of three linear equations in three unknowns
+    \[
+    \begin{cases}
+    a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\
+    a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = b_2 \\
+    a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = b_3
+    \end{cases}
+    \]
+    describe all the possible types of the solution set in the 3-space \( \mathbb{R}^3 \).
+    
+    \begin{proof}
+        pending
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.2}
+    Suppose that the augmented matrices for some systems of linear equations have been reduced to reduced row-echelon form as below by elementary row operations. Solve the systems:
+    \begin{center}
+        \begin{tabular}{cc}
+            \( \left[ \begin{array}{cccc}
+                1 & 0 & 0 & 5 \\
+                0 & 1 & 0 & -2 \\
+                0 & 0 & 0 & 4
+                \end{array} \right] \) & \( \left[ \begin{array}{ccccc}
+                1 & 0 & 0 & 4 & -1 \\
+                0 & 1 & 0 & 2 & 6 \\
+                0 & 0 & 1 & 3 & 2
+                \end{array} \right] \) \\
+        \end{tabular}
+    \end{center}
+        
+    \begin{proof}
+        In the first case we have no solution as the bottom row would imply that we must have
+        \[ 0x_1 + 0x_2+0x_3 = 0 = 4 \]
+        which is clearly absurd. In the second case we have 
+        \begin{align*}
+            x_{1} &= -1-4x_4 \\
+            x_{2} &= 6-2x_4 \\
+            x_3 &= 2-3x_4 \\
+            x_4 &\in \mathbb{R}
+        \end{align*}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.3}
+    No thanks.
+\end{problem}
+
+\begin{problem} \label{P.1.4}
+    Determine the condition on \( b_i \) so that the following system has a solution
+    \begin{tabular}{cc}
+    \( (1) \begin{cases} x + 2 y + 6z &= b_1 \\ 2x - 3y - 2z &= b_2 \\ 3x - y + 4z &= b_3 \end{cases} \) & \( (2) \begin{cases} x + 3 y - 2z &= b_1 \\ 2x - y + 3z &= b_2 \\ 4x + 2y +z &= b_3 \end{cases} \) \\
+    \end{tabular}
+        
+    \begin{proof}
+        \begin{enumerate}
+            \item Upon reduction, we get
+            \[
+            \left[
+            \begin{array}{ccc|c}
+                1 & 0 & 2 & \frac{3}{7}b_1+\frac{2}{7}b_2  \\
+                0 & 1 & 2 & -\frac{1}{7}b_2+\frac{2}{7}b_1 \\
+                0 & 0 & 0 & -b_2-b_1+b_3
+            \end{array}
+            \right]
+            \]
+            So, in order to have a solution, we must have that \( b_3 = b_1 + b_2 \). 
+            
+            \item It isn't too hard to show that the matrix (2) is row equivalent to the identity matrix. Thus, upon solving, we will have an augmented matrix of the form
+            \[
+            \left[
+            \begin{array}{ccc|c}
+                 1 & 0 & 0 & c_1  \\
+                 0 & 1 & 0 & c_2 \\
+                 0 & 0 & 1 & c_3
+            \end{array}
+            \right]
+            \]
+            where each \( c_i \) is simply a linear combination of \( b_1, b_2, \) and \( b_3 \). Thus, there are no restrictions on \( b_1, b_2, \) and \( b_3 \).
+        \end{enumerate}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.5}
+    Prove the remaining parts of Theorem 1.3. 
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item
+            \begin{align*}
+            \left[(A+B)+C\right]_{ij} &= \left[A+B\right]_{ij} + \left[C\right]_{ij} \\
+            &= (\left[A\right]_{ij} + \left[B\right]_{ij}) + \left[C\right]_{ij} \\
+            &= \left[A\right]_{ij} + (\left[B\right]_{ij} + \left[C\right]_{ij}) \\
+            &= \left[A\right]_{ij} + \left[B+C\right]_{ij} \\
+            &= \left[A+(B+C)\right]_{ij}
+            \end{align*}
+            
+            \item
+            \[
+            \left[ A+0 \right]_{ij} = \left[ A \right]_{ij} + 0 = \left[ A \right]_{ij} = 0 + \left[ A \right]_{ij} = \left[ 0+A \right]_{ij}
+            \]
+            
+            \item trivial
+            
+            \item trivial
+            
+            \item trivial
+            
+            \item trivial 
+            
+            \item trivial
+        \end{enumerate}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.6}
+    Find a matrix \( B \) such that \( A + B^T = (A-B)^T \), where
+    \[
+    A = \left[ 
+    \begin{array}{ccc}
+        2 & -3 & 0 \\
+        4 & -1 & 3 \\
+        -1 & 0 & 1
+    \end{array}
+    \right]
+    \]
+        
+    \begin{proof}
+        Let
+        \[ B = \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix} \]
+        So
+        \[ B^T= \begin{bmatrix} a & d & g \\ b & e & h \\ c & f & i \end{bmatrix} \]
+        So
+        \[ A+B^T = \begin{bmatrix} 2+a & -3+d & 0+g \\ 4+b & -1+e & 3-f \\ -1+c & 0+f & 1+i \end{bmatrix} \]
+        and
+        \[ (A-B)^T = \begin{bmatrix} 2-a & 4-d & -1-g \\ -3-b & -1-e & 0-h \\ 0-c & 3-f & 1-i  \end{bmatrix} \]
+        Thus,
+        \[ A+B^T = (A-B)^T \]
+        implies
+        \[
+        \begin{bmatrix} 2+a & -3+d & 0+g \\ 4+b & -1+e & 3-f \\ -1+c & 0+f & 1+i \end{bmatrix} = \begin{bmatrix} 2-a & 4-d & -1-g \\ -3-b & -1-e & 0-h \\ 0-c & 3-f & 1-i  \end{bmatrix}
+        \]
+        By the definition of matrix equality, we then get that
+        \[ B = \left[ \begin{matrix} 0 & -\frac{7}{2} & \frac{1}{2} \\ \frac{7}{2} & 0 & \frac{3}{2} \\ -\frac{1}{2} & -\frac{3}{2} & 0 \end{matrix} \right] \]
+        One could also easily show that, in general, \( (A+B)^T = A^T + B^T \) and from this conclude that
+        \[
+        B = \frac{1}{2}(A-A^T) = \left[ \begin{matrix} 0 & -\frac{7}{2} & \frac{1}{2} \\ \frac{7}{2} & 0 & \frac{3}{2} \\ -\frac{1}{2} & -\frac{3}{2} & 0 \end{matrix} \right]
+        \]
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.7}
+    Trivial
+\end{problem}
+
+\begin{problem} \label{P.1.8}
+    Give an example of matrices \( A \) and \( B \) such that \( (AB)^T \neq A^TB^T \)
+        \begin{proof}
+            Notice \( A = \left[ \begin{matrix} 1 & 1 \\ 0 & 1 \end{matrix} \right] \) and \( B = \left[ \begin{matrix} 1 & 0 \\ 1 & 1 \end{matrix} \right] \) work.
+        \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.9}
+    Prove or disprove: If \( A \) is not a zero matrix and \( AB = AC \), then \( B = C \). Similarly, is it true or not that \( AB = 0 \) implies \( A = 0 \) or \( B = 0 \)?
+    
+    \begin{proof}
+        Notice that the two properties are equivalent: If we have a cancellation law then
+        \[ AB = 0 = A0 \]
+        Yielding \( B = 0 \). On the other hand, should we have an integral domain, then 
+        \begin{align*}
+            AB &= AC \\
+            AB - AC &= 0 \\
+            A(B-C) &= 0
+        \end{align*}
+        and so \( A \neq 0 \) will imply \( B = C \). Thus, observing that 
+        \[
+        \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}
+        \]
+        shows that neither is true.
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.10}
+    Show that any triangular matrix \( A \) satisfying \( AA^T = A^TA \) is a diagonal matrix.
+    
+    \begin{proof}
+        Observe that
+        \[ AA^T = A^TA = (AA^T)^T \]
+        so that \( AA^T \) is symmetric. Since \( A \), \( A^T \), and hence \( AA^T \) are triangular, we get that \( AA^T \) must be diagonal.
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.11}
+    For a square matrix \( A \) show that 
+    \begin{enumerate}
+        \item \( AA^T \) and \( A+A^T \) are symmetric. 
+        \item \( A - A^T \) is skew-symmetric.
+        \item \( A \) can be expressed as the sum of symmetric part \( B = \frac{1}{2}(A+A^T) \) and skew-symmetric part \( C = \frac{1}{2}(A-A^T) \), so that \( A = B+C \).
+    \end{enumerate}
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item
+            \[
+            [AA^T]_{ij} = \sum [A]_{ir}[A^T]_{rj} = \sum [A^T]_{ri}[A]_{jr} = \sum [A]_{jr}[A^T]_{ri} = [AA^T]_{ji}
+            \]
+            and
+            \[
+            [A+A^T]_{ij} = [A]_{ij} + [A^T]_{ij} = [A^T]_{ji} + [A]_{ji} = [A+A^T]_{ji}
+            \]
+            
+            \item Similar to above.
+            
+            \item We know \( B \) is symmetric by (1), \( C \) is skew-symmetric by (2), and 
+            \[
+            B+C = \frac{1}{2}A + \frac{1}{2}A^T + \frac{1}{2}A - \frac{1}{2}A^T = A
+            \]
+        \end{enumerate}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.12}
+    pending
+\end{problem}
+
+\begin{problem} \label{P.1.13}
+    pending
+\end{problem}
+
+\begin{problem} \label{P.1.14}
+    Let \( A \) be any invertible matrix and \( k \) any nonzero scalar. Show that
+    \begin{enumerate}
+    
+        \item \( A^{-1} \) is invertible and \( (A^{-1})^{-1} = A \).
+        
+        \item The matrix \( kA \) is invertible and \( (kA)^{-1} = \frac{1}{k}A^{-1} \).
+        
+        \item \( A^T \) is invertible and \( (A^T)^{-1} = (A^{-1})^{T}\) 
+    \end{enumerate}
+    
+    \begin{proof}
+        For the following, the same is true with multiplication on either side.
+        \begin{enumerate}
+            \item 
+            \[
+            AA^{-1} = A^{-1}A = I
+            \]
+            So \( (A^{-1})^{-1} = A \).
+            
+            \item 
+            \[
+            (kA)\left(\frac{1}{k}A^{-1}\right) = \left(k\frac{1}{k}\right) AA^{-1} = I
+            \]
+            
+            \item 
+            \[
+            (A^{-1})^TA^T = (AA^{-1})^T = I^T = I
+            \]
+        \end{enumerate}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.15}
+    Prove:
+    \begin{enumerate}
+        \item If \( A \) has a zero row, so does \( AB \).
+        
+        \item If \( B \) has a zero column, so does \( AB \).
+        
+        \item Any matrix with a zero row or a zero column cannot be invertible.
+    \end{enumerate}
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item If the \( ith \) row of \( A \) is a zero row, then
+            \[
+            [AB]_{ij} = \sum_{r=1}^n[A]_{ir}[B]_{rj} = \sum_{r=1}^n 0 \cdot [B]_{rj} = 0
+            \]
+            so that the \( ith \) row of \( AB \) is zero as well.
+            
+            \item Repeat the above argument with the assumption that the \( jth \) column of \( B \) is a zero column.
+            
+            \item Notice that (1) and (2) imply that if \( A \) has either a zero row or a zero column then \( AB \) also has either a zero row or a zero column. Hence \( AB \neq I \).
+        \end{enumerate}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.16}
+    Let \( A \) be an invertible matrix. Is it true that \( (A^k)^T = (A^T)^k \) for any integer \( k \)? Justify your answer.
+    
+    \begin{proof}
+        Since \( A^{-k} = (A^{-1})^k \), it is sufficient to show that the claim holds for all \( k \in \mathbb{N} \). We proceed by induction on \( k \). For \( k = 0 \) the claim is obvious. If the claim holds for \( k \), then
+        \[ (A^{k+1})^T = (A^kA)^T = A^T(A^k)^T = A^T(A^T)^k = (A^T)^{k+1} \]
+        So the claim holds for all \( k \in \mathbb{N} \), and hence for all \( k \in \mathbb{Z} \).
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.17}
+    Prove:
+    \begin{enumerate}
+        \item A permutation matrix is the product of a finite number of elementary matrices each of which corresponds to the `row-interchanging' elementary row operation.
+        
+        \item Every permutation matrix \( P \) is invertible and \( P^{-1} = P^T \).
+        
+        \item The product of any two permutation matrices is a permutation matrix.
+        
+        \item The transpose of a permutation matrix is also a permutation matrix.
+    \end{enumerate}
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item Note that any elementary matrix corresponding to a row-interchange, \( E \), admits for all \( i \) and \( j \)
+            \[
+            [E]_{ij} = [I]_{\tau(i)j}
+            \]
+            where \( \tau \) is a transposition. We will denote this as \( E = I_\tau \). Furthermore, we may formalize the author's definition of a permutation matrix, \( P \), so that for all \( i \) and \(j \)
+            \[
+            [P]_{ij} = [I]_{\sigma(i)j}
+            \]
+            where \( \sigma \) is a permutation. We will denote this as \( P = I_\sigma \). So if \( \tau \) is a transposition and \( \sigma \) is a permutation, then for all \( i \) and \( j \)
+            \begin{align*}
+                [I_\tau I_\sigma]_{ij} &= \sum_{r} [I]_{\tau(i)r}[I]_{\sigma(r)j} \\
+                &= [I]_{\sigma(\tau(i))j}
+            \end{align*}
+            implying \( I_\tau I_\sigma = I_{\sigma \tau} \). Finally, since every permutation can be written as a product of transpositions, if \( \sigma \) is a permutation then
+            \[
+            \sigma = \tau_1 \tau_2 \ldots \tau_k
+            \]
+            where \( \tau_i \) is a transposition. Using associativity and the above result, we get that
+            \[
+            I_\sigma = I_{\Pi \tau_i} = I_{\tau_k}I_{\tau_{k-1}}\ldots I_{\tau_2}I_{\tau_1}
+            \]
+            Therefore, every permutation matrix is the product of a finite number of elementary matrices each of which corresponds to the `row-interchanging' elementary row operation.
+            
+            \item Notice that if \( \tau \) is a transposition, then \( \tau^2 = id \). We will show that
+            \[
+            I_{\tau}^{-1} = I_{\tau} = I_{\tau}^T
+            \]
+            For the first equality,
+            \[
+            I_\tau I_\tau = I_{\tau^2} = I
+            \]
+            For the second equality,
+            \[
+            [I_\tau]_{ij} = [I]_{\tau(i)j} = \begin{cases} 1 & \text{iff } \tau (i) = j \text{ iff } i = \tau(j) \\ 0 & elsewhere \end{cases}
+            \]
+            and
+            \[
+            [I_{\tau}^T]_{ij} = [I_\tau]_{ji} = [I]_{\tau(j)i} = \begin{cases} 1 & \text{iff } \tau (j) = i \text{ iff } j = \tau(i) \\ 0 & elsewhere \end{cases}
+            \]
+            Therefore, \( I_\tau = I_\tau^T \). Since \( P = I_\sigma = I_{\tau_k}I_{\tau_{k-1}}\ldots I_{\tau_1} \), it follows immediately from the above equality that
+            \[
+            P^{-1} = I_{\tau_1}I_{\tau_2}\ldots I_{\tau_k} = I_{\tau_1}^T I_{\tau_2}^T \ldots I_{\tau_k}^T = (I_{\tau_k}I_{\tau_{k-1}}\ldots I_{\tau_1})^T = P^T
+            \]
+            
+            \item 
+            \[
+            I_{\sigma_1}I_{\sigma_2} = I_{\sigma_2 \sigma_1} = I_{\sigma}
+            \]
+            
+            \item 
+            \[
+            P^T = P^{-1} = I_{\tau_1}I_{\tau_2}\ldots I_{\tau_k} = I_{\sigma'}
+            \]
+            where \( \sigma' = \tau_k\tau_{k-1}\ldots\tau_1 \).
+        \end{enumerate}
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.18}
+    pending
+\end{problem}
+
+\begin{problem} \label{P.1.19}
+    pending
+\end{problem}
+
+\begin{problem} \label{P.1.20}
+    pending
+\end{problem}
+
+\begin{problem} \label{P.1.21}
+    When is a diagonal matrix
+    \[
+    D = \begin{bmatrix} d_1 & & \mathbf{0} \\ & \ddots & \\ \mathbf{0} & & d_n  \end{bmatrix}
+    \]
+    nonsingular, and what is \( D^{-1} \)?
+    
+    \begin{proof}
+        Notice that if \( d_i \neq 0 \) for all \( i \), then
+        \[
+        \begin{bmatrix} \frac{1}{d_1} & & \mathbf{0} \\ & \ddots & \\ \mathbf{0} & & \frac{1}{d_n}  \end{bmatrix}\begin{bmatrix} d_1 & & \mathbf{0} \\ & \ddots & \\ \mathbf{0} & & d_n  \end{bmatrix} = I
+        \]
+        by uniqueness of the inverse we get that \( D \) is nonsingular iff \( d_i \neq 0 \) for all \( i \) and, in that case,
+        \[
+        D^{-1} = \begin{bmatrix} \frac{1}{d_1} & & \mathbf{0} \\ & \ddots & \\ \mathbf{0} & & \frac{1}{d_n} \end{bmatrix}
+        \]
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.22}
+    
+\end{problem}
+
+\begin{problem} \label{P.1.23}
+    True or false: If the matrix \( A \) has a left inverse \( C \) so that \( CA=I_n \), then \( x = Cb \) is the solution to the system \( Ax = b \). Justify your answer.
+    
+    \begin{proof}
+        True:
+        \begin{align*}
+            Ax &= b \\
+            C(Ax) &= Cb \\
+            (CA)x &= Cb \\
+            Ix &= Cb \\
+            x &= Cb
+        \end{align*}
+        where uniqueness is implied by \( CA = I_n \). Note that this does not imply that \( AC = I \) since \( ACb = b \) might imply only that \( b \) is a fixed point of multiplication by \( AC \). 
+    \end{proof}
+\end{problem}
+
+\begin{problem} \label{P.1.24}
+    pending
+\end{problem}
+
+\begin{problem} \label{P.1.25}
+    Let \( A \) and \( B \) be two lower triangular matrices. Prove that
+    \begin{enumerate}
+        \item AB is lower triangular.
+        
+        \item If \( A \) is invertible, then its inverse is also a lower triangular matrix.
+        
+        \item If the diagonal entries of \( A \) and \( B \) are all \(1\)'s, then the same holds for their product \( AB \) and inverses.
+    \end{enumerate}
+    
+    \begin{proof}
+        \begin{enumerate}
+            \item If \( i < j \)
+            \begin{align*}
+                [AB]_{ij} &= \sum_{r=1}^n [A]_{ir}[B]_{rj} \\
+                &= \sum_{r=1}^{j-1}[A]_{ir}[B]_{rj} + \sum_{r=j}^n [A]_{ir}[B]_{rj} \\
+                &= \sum_{r=1}^{j-1} [A]_{ir}\cdot 0 + \sum_{r=j}^n 0 \cdot [B]_{rj} \\
+                &= 0 + 0 \\
+                &= 0
+            \end{align*}
+            
+            \item Since \( A \) is invertible and square, it is row-equivalent to \( I \). Furthermore, since \( A \) is lower triangular, only forward elimination is needed to obtain \( I \). The elementary matrices corresponding to a forward eliminating row operation are all lower triangular. Therefore, \( A^{-1} \) is the product of lower triangular matrices and hence lower triangular.
+            
+            \item
+            \begin{align*}
+                [AB]_{ii} &= \sum_{r} [A]_{ir}[B]_{rj} \\
+                &= [A]_{ii}[B]_{ii} \\
+                &= 1 \cdot 1 \\
+                &= 1
+            \end{align*}
+            and
+            \[
+            [AA^{-1}]_{ii} = \sum_{r}[A]_{ir}[A^{-1}]_{ri} = [A]_{ii}[A^{-1}]_{ii} = 1 \cdot [A^{-1}]_{ii} = [I]_{ii} = 1
+            \]
+        \end{enumerate}
+    \end{proof}
+\end{problem}
